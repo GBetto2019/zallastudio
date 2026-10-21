@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Archivo, Montserrat } from "next/font/google";
-import { business, address, siteUrl, seo } from "@/content/site";
-import { localBusinessJsonLd } from "@/lib/jsonld";
+import { business, siteUrl, seo } from "@/content/site";
+import { siteJsonLd } from "@/lib/jsonld";
 import "@/styles/index.css";
 
 /**
@@ -18,25 +18,18 @@ const montserrat = Montserrat({ subsets: ["latin"], variable: "--font-montserrat
  * por URL, de forma agressiva. Mudar a arte sem mudar a URL faz o preview
  * antigo persistir por dias. Ao regerar a arte, incremente este número.
  */
-const ogImage = "/og.jpg?v=1";
+const ogImage = "/og.jpg?v=2";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: { default: seo.page.title, template: `%s · ${business.name}` },
   description: seo.page.description,
   applicationName: business.name,
-  keywords: [
-    "personal trainer",
-    "studio de personal",
-    "musculação",
-    "emagrecimento",
-    "condicionamento físico",
-    "treino em grupo",
-    `personal trainer ${address.city}`,
-    `personal trainer em ${address.city}`,
-    `academia ${address.city}`,
-    business.trainer,
-  ],
+  keywords: [...seo.keywords],
+  authors: [{ name: business.trainer }],
+  creator: business.legalName,
+  publisher: business.legalName,
+  category: "fitness",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
@@ -45,16 +38,24 @@ export const metadata: Metadata = {
     siteName: business.legalName,
     title: seo.share.title,
     description: seo.share.description,
-    // Gerada por `npm run og` (JPEG leve — o WhatsApp descarta preview pesado).
+    // Gerada por `npm run og` (scripts/og_image.py): JPEG leve, o WhatsApp descarta preview pesado.
     images: [{ url: ogImage, width: 1200, height: 630, type: "image/jpeg", alt: seo.share.imageAlt }],
   },
   twitter: {
     card: "summary_large_image",
     title: seo.share.title,
     description: seo.share.description,
-    images: [ogImage],
+    images: [{ url: ogImage, alt: seo.share.imageAlt }],
   },
-  robots: { index: true, follow: true },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
+  },
+  // O código de verificação do Google Search Console entra pela env var, sem commit.
+  verification: process.env.GOOGLE_SITE_VERIFICATION ? { google: process.env.GOOGLE_SITE_VERIFICATION } : undefined,
+  // Sem isso o Safari do iPhone transforma números da página em links de ligação.
+  formatDetection: { telephone: false },
 };
 
 export const viewport: Viewport = {
@@ -70,7 +71,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script
           type="application/ld+json"
           // Renderizado no servidor a partir de content/site.ts — sem entrada de usuário.
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd()) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd()) }}
         />
       </body>
     </html>

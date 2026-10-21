@@ -7,18 +7,23 @@ import {
   whatsappNumber,
   faq,
   plans,
+  maps,
+  seo,
 } from "@/content/site";
 
 /**
- * JSON-LD de negócio local. É o que faz o studio aparecer em
- * "personal trainer perto de mim" com endereço e horário.
+ * JSON-LD do site: o studio (negócio local), o site e a Bárbara num único
+ * `@graph`, ligados por `@id`. É o que faz o studio aparecer em "personal
+ * trainer perto de mim" com endereço, preço e responsável técnico.
  * Validar em https://search.google.com/test/rich-results antes do go-live.
  */
-export function localBusinessJsonLd() {
-  return {
-    "@context": "https://schema.org",
+export function siteJsonLd() {
+  const studioId = `${siteUrl}/#studio`;
+  const pessoaId = `${siteUrl}/#barbara`;
+
+  const studio = {
     "@type": ["ExerciseGym", "LocalBusiness"],
-    "@id": `${siteUrl}/#studio`,
+    "@id": studioId,
     name: business.name,
     legalName: business.legalName,
     description: business.tagline,
@@ -26,9 +31,14 @@ export function localBusinessJsonLd() {
     telephone: `+${whatsappNumber}`,
     ...(business.email ? { email: business.email } : {}),
     image: `${siteUrl}/og.jpg`,
-    logo: `${siteUrl}/og.jpg`,
+    logo: `${siteUrl}/apple-icon.png`,
     sameAs: [instagram.url],
-    founder: { "@type": "Person", name: business.trainer, jobTitle: "Personal trainer" },
+    founder: { "@id": pessoaId },
+    priceRange: seo.priceRange,
+    currenciesAccepted: "BRL",
+    paymentAccepted: "Cartão de crédito, Pix",
+    areaServed: { "@type": "City", name: address.city },
+    hasMap: maps.directionsUrl,
     address: {
       "@type": "PostalAddress",
       streetAddress: address.street,
@@ -67,6 +77,32 @@ export function localBusinessJsonLd() {
       })),
     ),
   };
+
+  const pessoa = {
+    "@type": "Person",
+    "@id": pessoaId,
+    name: business.trainer,
+    jobTitle: "Personal trainer",
+    worksFor: { "@id": studioId },
+    hasCredential: {
+      "@type": "EducationalOccupationalCredential",
+      credentialCategory: "Registro profissional",
+      name: business.cref,
+    },
+    knowsAbout: ["Musculação", "Emagrecimento", "Condicionamento físico", "Nutrição esportiva", "Fisiculturismo"],
+    sameAs: [instagram.url],
+  };
+
+  const site = {
+    "@type": "WebSite",
+    "@id": `${siteUrl}/#site`,
+    url: siteUrl,
+    name: business.name,
+    inLanguage: "pt-BR",
+    publisher: { "@id": studioId },
+  };
+
+  return { "@context": "https://schema.org", "@graph": [studio, pessoa, site] };
 }
 
 /** FAQPage — habilita o rich result de perguntas na busca. */

@@ -16,9 +16,10 @@ export function Hero() {
       </div>
 
       <div className="shell hero-inner">
-        <Eyebrow>{hero.eyebrow}</Eyebrow>
-
+        {/* O rótulo fica dentro do h1: "personal trainer em Santo Antônio de
+            Posse" é o termo que as pessoas buscam, e o h1 é o título da página. */}
         <h1 className="disp">
+          <Eyebrow>{hero.eyebrow}</Eyebrow>
           {hero.headline.plain}
           <br />
           <em>{hero.headline.hot}</em>

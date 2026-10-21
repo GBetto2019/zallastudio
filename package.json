@@ -9,7 +9,7 @@
     "start": "next start",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
-    "og": "node scripts/og-image.mjs"
+    "og": "python scripts/og_image.py"
   },
   "dependencies": {
     "next": "16.2.12",

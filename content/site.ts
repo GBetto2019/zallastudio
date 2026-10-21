@@ -102,16 +102,32 @@ export const hoursSummary = "Horário agendado pelo WhatsApp";
  * curto e coloca a oferta logo no começo.
  */
 export const seo = {
+  /** Título ≤ 60 e descrição ≤ 155 caracteres: o que o Google mostra sem cortar. */
   page: {
-    title: "Studio Zalla — Personal Trainer em Santo Antônio de Posse",
+    title: "Studio Zalla | Personal Trainer em Santo Antônio de Posse",
     description:
-      "Studio de personal trainer em Santo Antônio de Posse/SP com Bárbara Zalla (CREF 091687-G/SP). Treino individual ou em turmas de até 4 pessoas, sem taxa de matrícula. Aula experimental grátis.",
+      "Personal trainer em Santo Antônio de Posse/SP: treino individual ou em turmas de até 4, com Bárbara Zalla (CREF 091687-G/SP). Aula experimental grátis.",
   },
   share: {
-    title: "Studio Zalla — Personal Trainer em Santo Antônio de Posse",
-    description: "Treino individual ou em grupo de até 4 pessoas. Aula experimental grátis.",
-    imageAlt: "Logotipo do Studio Zalla sobre foto de treino em ambiente escuro",
+    title: "Studio Zalla | Personal Trainer em Santo Antônio de Posse",
+    description: "Treino com método, individual ou em turmas de até 4. Aula experimental grátis.",
+    imageAlt:
+      "Studio Zalla, personal trainer em Santo Antônio de Posse: Treino com método, individual ou em turmas de até 4 pessoas. Aula experimental grátis.",
   },
+  keywords: [
+    "personal trainer Santo Antônio de Posse",
+    "personal trainer em Santo Antônio de Posse",
+    "studio de personal trainer",
+    "academia Santo Antônio de Posse",
+    "musculação Santo Antônio de Posse",
+    "emagrecimento",
+    "condicionamento físico",
+    "treino em grupo",
+    "treino personalizado",
+    "Bárbara Zalla",
+  ],
+  /** Faixa de preço dos planos, para o JSON-LD. */
+  priceRange: "R$ 220 – R$ 660",
 } as const;
 
 /* ------------------------------------------------------------------- Hero */
