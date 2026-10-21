@@ -5,7 +5,7 @@
   background:linear-gradient(90deg,rgba(11,11,12,.92) 0%,rgba(11,11,12,.7) 60%,rgba(11,11,12,.5) 100%)}
 .manifesto blockquote{margin:22px 0 0;max-width:640px}
 .manifesto .disp{hyphens:none;overflow-wrap:normal}
-.manifesto .disp{font-size:clamp(1.8rem,5.2vw,3.6rem);line-height:1.04}
+.manifesto .disp{font-size:calc(clamp(1.8rem,5.2vw,3.6rem) - 2px);line-height:1.04}
 .manifesto .l2{margin-top:24px;color:var(--mist);font-size:clamp(1rem,2vw,1.15rem);max-width:40ch}
 .manifesto .by{margin-top:28px;display:flex;align-items:center;gap:12px;color:var(--fog);
   font-family:var(--cond);text-transform:uppercase;letter-spacing:.2em;font-size:.74rem;font-weight:600;

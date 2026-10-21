@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { hero, waMessages, business } from "@/content/site";
-import { photos, alts, logos } from "@/lib/photos";
+import { hero, waMessages } from "@/content/site";
+import { photos, alts } from "@/lib/photos";
 import { Eyebrow } from "../ui/Eyebrow";
 import { WhatsAppLink } from "../ui/WhatsAppLink";
 import { WhatsAppGlyph } from "../ui/icons";
@@ -16,9 +16,6 @@ export function Hero() {
       </div>
 
       <div className="shell hero-inner">
-        {/* Logo sobre área escura e acima do mínimo de 140 px — guia §01. */}
-        <Image className="hero-logo" src={logos.full} alt={business.legalName} width={200} priority unoptimized />
-
         <Eyebrow>{hero.eyebrow}</Eyebrow>
 
         <h1 className="disp">

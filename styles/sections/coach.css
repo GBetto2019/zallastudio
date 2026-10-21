@@ -3,7 +3,7 @@
 /* height:auto pelo mesmo motivo de .diff-media img — ver differentials.css. */
 .coach-media img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:center 20%;
   border-radius:var(--radius)}
-.coach-name{font-size:clamp(2rem,5.6vw,3.6rem);margin-top:16px}
+.coach-name{font-size:calc(clamp(2rem,5.6vw,3.6rem) - 2px);margin-top:16px}
 .coach-role{margin-top:12px;font-family:var(--cond);text-transform:uppercase;letter-spacing:.18em;
   font-size:.76rem;font-weight:600;color:var(--flame)}
 .coach-bio{margin-top:24px;display:grid;gap:14px;color:var(--mist);max-width:56ch}

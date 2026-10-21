@@ -6,7 +6,7 @@
 /* Símbolo SZ em preto translúcido, saindo pelo canto. */
 .finalcta .watermark{position:absolute;right:-6%;bottom:-16%;width:min(560px,70vw);height:auto;
   filter:brightness(0);opacity:.08;z-index:-1;pointer-events:none}
-.finalcta h2{font-size:clamp(1.8rem,5.4vw,3.8rem);max-width:20ch;margin:0 auto 20px}
+.finalcta h2{font-size:calc(clamp(1.8rem,5.4vw,3.8rem) - 2px);max-width:20ch;margin:0 auto 20px}
 .finalcta h2 .dark{display:block;text-decoration:underline;text-decoration-thickness:.08em;
   text-underline-offset:.14em}
 .finalcta p{max-width:44ch;margin:0 auto 32px;font-size:1.08rem;font-weight:500}
