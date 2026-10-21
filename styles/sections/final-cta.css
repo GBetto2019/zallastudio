@@ -1,0 +1,14 @@
+/* ============ CTA FINAL ============ */
+/* Bloco laranja com texto preto: a versão monocromática do guia e o mesmo
+   tratamento do post "Vagas abertas" dos modelos de Instagram. */
+.finalcta{background:var(--flame);color:var(--on-flame);text-align:center;position:relative;
+  overflow:hidden;padding:clamp(64px,10vw,120px) 0;isolation:isolate}
+/* Símbolo SZ em preto translúcido, saindo pelo canto. */
+.finalcta .watermark{position:absolute;right:-6%;bottom:-16%;width:min(560px,70vw);height:auto;
+  filter:brightness(0);opacity:.08;z-index:-1;pointer-events:none}
+.finalcta h2{font-size:clamp(1.8rem,5.4vw,3.8rem);max-width:20ch;margin:0 auto 20px}
+.finalcta h2 .dark{display:block;text-decoration:underline;text-decoration-thickness:.08em;
+  text-underline-offset:.14em}
+.finalcta p{max-width:44ch;margin:0 auto 32px;font-size:1.08rem;font-weight:500}
+.finalcta .btn{background:var(--ink);color:var(--paper)}
+.finalcta .btn:hover{filter:brightness(1.4)}

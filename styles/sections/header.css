@@ -1,0 +1,24 @@
+/* ============ HEADER ============ */
+header{position:sticky;top:0;z-index:60;background:rgba(11,11,12,.84);
+  backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:24px;height:64px}
+.nav>a:first-child{display:flex;align-items:center;gap:12px}
+.nav .logo{height:34px;width:auto}
+.nav-name{font-family:var(--cond);text-transform:uppercase;letter-spacing:.22em;
+  font-size:.78rem;font-weight:500;color:var(--paper)}
+.nav nav{margin-left:auto;display:flex;gap:26px}
+.nav nav a{font-family:var(--cond);text-transform:uppercase;letter-spacing:.14em;
+  font-size:.74rem;font-weight:600;color:var(--fog);transition:color .15s;padding:6px 0}
+.nav nav a:hover{color:var(--paper)}
+.nav .btn{padding:11px 18px;font-size:.74rem}
+.burger{display:none;margin-left:auto;background:none;border:0;color:var(--paper);
+  width:44px;height:44px;cursor:pointer}
+.burger svg{width:26px;height:26px}
+@media(max-width:960px){
+  .nav nav{display:none;position:absolute;top:64px;left:0;right:0;margin:0;
+    flex-direction:column;gap:0;background:var(--ink);border-bottom:1px solid var(--line)}
+  .nav nav.open{display:flex}
+  .nav nav a{padding:16px 4vw;border-top:1px solid var(--line);font-size:.86rem}
+  .nav>.btn{display:none}
+  .burger{display:inline-flex;align-items:center;justify-content:center}
+}

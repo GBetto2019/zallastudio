@@ -1,0 +1,11 @@
+/* ============ FLOAT WHATSAPP ============ */
+.float{position:fixed;right:20px;bottom:20px;z-index:70;width:60px;height:60px;border-radius:50%;
+  background:#25d366;color:#fff;display:grid;place-items:center;
+  box-shadow:0 12px 30px -8px rgba(37,211,102,.6);transform:translateY(24px) scale(.6);
+  opacity:0;pointer-events:none;transition:.28s cubic-bezier(.2,.8,.3,1)}
+.float.show{transform:none;opacity:1;pointer-events:auto}
+.float:hover{filter:brightness(1.06);transform:scale(1.06)}
+.float svg{width:32px;height:32px}
+.float .ping{position:absolute;inset:0;border-radius:50%;border:2px solid #25d366;
+  animation:ping 2s ease-out infinite}
+@keyframes ping{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.5);opacity:0}}

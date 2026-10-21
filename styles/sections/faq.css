@@ -1,0 +1,12 @@
+/* ============ FAQ ============ */
+.faq{max-width:800px;margin-inline:auto}
+.qa{border-bottom:1px solid var(--line)}
+.qa summary{width:100%;text-align:left;background:none;border:0;color:var(--paper);cursor:pointer;
+  padding:22px 44px 22px 0;position:relative;font-family:var(--cond);font-weight:600;
+  font-size:1.04rem;letter-spacing:.01em;list-style:none}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"";position:absolute;right:6px;top:50%;width:14px;height:14px;
+  margin-top:-7px;background:var(--flame);transition:transform .25s;
+  clip-path:polygon(46% 0,54% 0,54% 46%,100% 46%,100% 54%,54% 54%,54% 100%,46% 100%,46% 54%,0 54%,0 46%,46% 46%)}
+.qa[open] summary::after{transform:rotate(45deg)}
+.qa .ans{padding:0 44px 24px 0;color:var(--fog);font-size:1rem;line-height:1.6}

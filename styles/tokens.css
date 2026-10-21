@@ -1,0 +1,23 @@
+/* ============ TOKENS ============ */
+/* Paleta do Guia de marca Studio Zalla v1.0 — proporção 70% preto/grafite,
+   20% off-white, 10% laranja. O laranja marca o que importa: símbolo,
+   chamadas e botões. */
+:root{
+  --ink:#0b0b0c;          /* Preto — fundo base */
+  --ink-2:#111113;        /* faixa alternada entre seções */
+  --panel:#1a1a1d;        /* Grafite — superfície elevada */
+  --panel-2:#232327;      /* card sobre grafite */
+  --line:#2e2e33;         /* bordas */
+  --fog:#8c8c92;          /* Cinza — texto secundário */
+  --mist:#c9c5be;         /* texto de apoio sobre foto, entre cinza e off-white */
+  --paper:#f3f0eb;        /* Off-white — texto primário */
+  --flame:#f07b2e;        /* Laranja Zalla */
+  --on-flame:#0b0b0c;     /* texto sobre laranja (versão monocromática do guia) */
+  --radius:8px;
+  --shell:min(1200px,92vw);
+  /* As --font-* vêm do next/font em app/layout.tsx (auto-hospedadas, display:swap).
+     Títulos: Archivo Expanded Bold. Texto e rótulos: Montserrat. */
+  --sans:var(--font-montserrat),system-ui,sans-serif;
+  --cond:var(--font-montserrat),system-ui,sans-serif;
+  --disp:var(--font-archivo),'Arial Black',sans-serif;
+}

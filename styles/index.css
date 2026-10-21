@@ -1,0 +1,22 @@
+/* Um arquivo por seção, espelhando components/sections/. */
+
+@import "./tokens.css";
+@import "./base.css";
+@import "./sections/header.css";
+@import "./sections/hero.css";
+@import "./sections/stats.css";
+@import "./sections/manifesto.css";
+@import "./sections/benefits.css";
+@import "./sections/differentials.css";
+@import "./sections/plans.css";
+@import "./sections/studio.css";
+@import "./sections/coach.css";
+@import "./sections/reviews.css";
+@import "./sections/trial.css";
+@import "./sections/location.css";
+@import "./sections/instagram.css";
+@import "./sections/faq.css";
+@import "./sections/final-cta.css";
+@import "./sections/footer.css";
+@import "./sections/float.css";
+@import "./sections/legal.css";

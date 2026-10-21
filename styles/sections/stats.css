@@ -1,0 +1,15 @@
+/* ============ STATS ============ */
+/* Faixa em grafite com números em laranja: o laranja fica para o que importa
+   (proporção 70/20/10 do guia), em vez de uma faixa laranja inteira. */
+.stats{background:var(--panel);border-block:1px solid var(--line)}
+.statgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;
+  padding:clamp(30px,4vw,44px) 0}
+.stat{text-align:center;display:flex;flex-direction:column;align-items:center;gap:8px}
+.stat+.stat{border-left:1px solid var(--line)}
+.stat b{font-family:var(--disp);font-weight:700;font-stretch:125%;color:var(--flame);
+  font-size:clamp(1.9rem,4.6vw,2.9rem);line-height:1;font-variant-numeric:tabular-nums}
+.stat.wide b{font-size:clamp(1.6rem,3.6vw,2.3rem)}
+.stat span{font-family:var(--cond);text-transform:uppercase;letter-spacing:.14em;
+  font-size:.68rem;font-weight:600;color:var(--fog);max-width:20ch;line-height:1.4}
+@media(max-width:640px){.statgrid{grid-template-columns:repeat(2,1fr);gap:28px 12px}
+  .stat+.stat{border-left:0}}
