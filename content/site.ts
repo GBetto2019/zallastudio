@@ -39,9 +39,9 @@ export const siteUrl = (
     : "http://localhost:3000")
 ).replace(/\/+$/, "");
 
-export const whatsappNumber = "5514997351487";
+export const whatsappNumber = "5519998749809";
 
-export const phoneDisplay = "(14) 99735-1487";
+export const phoneDisplay = "(19) 99874-9809";
 
 /** TODO(dados-reais): confirmar o perfil — o guia de marca usa @studiozalla nos modelos de post. */
 export const instagram = {
